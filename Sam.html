@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Tourist Safety Monitoring & Incident Response System</title>
+    <!-- Bootstrap CDN for good styles -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS for smooth animations and styles -->
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+        }
+        .navbar {
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .section {
+            display: none;
+            padding: 40px 0;
+            animation: fadeIn 0.8s ease-in-out;
+        }
+        .active-section {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+        .btn-primary {
+            transition: background-color 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+        .panic-btn {
+            background-color: #dc3545;
+            color: white;
+            font-size: 1.5rem;
+            padding: 20px;
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease;
+        }
+        .panic-btn:hover {
+            transform: scale(1.1);
+        }
+        .map-placeholder {
+            height: 300px;
+            background-color: #e9ecef;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #ced4da;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">Smart Tourist Safety System</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#" onclick="showSection('home')">Home (SIH Description)</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="showSection('registration')">Registration</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="showSection('tourist-portal')">Tourist Portal</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" onclick="showSection('admin-portal')">Admin Portal</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Container -->
+    <div class="container">
+
+        <!-- Home Section: SIH Problem Description -->
+        <div id="home" class="section active-section">
+            <h1 class="text-center mb-4">Smart Tourist Safety Monitoring & Incident Response System</h1>
+            <div class="card">
+                <div class="card-body">
+                    <h2>Problem Statement</h2>
+                    <p>This problem statement proposes the development of a Smart Tourist Safety Monitoring & Incident Response System that leverages AI, Blockchain, and Geo-Fencing technologies. The system should include:</p>
+                    <ul>
+                        <li><strong>Digital Tourist ID Generation Platform</strong>: A secure blockchain-based system that issues digital IDs to tourists at entry points (airports, hotels, check-posts). These IDs should include basic KYC (Aadhaar/passport), trip itinerary, and emergency contacts, and be valid only for the duration of the visit.</li>
+                        <li><strong>Mobile Application for Tourists</strong>: Auto-assign a Tourist Safety Score based on travel patterns and area sensitivity. Geo-fencing alerts when tourists enter high-risk or restricted zones. Panic Button with live location sharing to nearest police unit and emergency contacts. Optional real-time tracking feature (opt-in) for families and law enforcement.</li>
+                        <li><strong>AI-Based Anomaly Detection</strong>: Detect sudden location drop-offs, prolonged inactivity, or deviation from planned routes. Flag missing, silent, or distress behaviour for investigations.</li>
+                        <li><strong>Tourism Department & Police Dashboard</strong>: Real-time visualizations of tourist clusters and heat maps of high-risk zones. Access to digital ID records, alert history, and last known locations. Automated E-FIR generation for missing person cases.</li>
+                        <li><strong>IoT Integration (Optional)</strong>: Smart bands or tags for tourists in high-risk areas (e.g., caves, forests). Continuous health/location signals and manual SOS feature.</li>
+                        <li><strong>Multilingual Support</strong>: App and platform available in 10+ Indian languages and English. Voice/text emergency access for elderly or disabled travellers.</li>
+                        <li><strong>Data Privacy & Security</strong>: End-to-end encryption and compliance with data protection laws. Blockchain ensures tamper-proof identity and travel records.</li>
+                    </ul>
+                    <h2>Background</h2>
+                    <p>In regions like the Northeast, where tourism is a key economic driver, ensuring the safety of visitors is paramount. Traditional policing and manual tracking methods are insufficient in remote and high-risk areas. There is a pressing need for a smart, technology-driven solution that ensures real-time monitoring, rapid response, and secure identity verification for tourists, while maintaining privacy and ease of travel.</p>
+                    <h2>Expected Solution</h2>
+                    <p>A robust digital ecosystem comprising:</p>
+                    <ul>
+                        <li>Web portal and mobile app for tourists and authorities.</li>
+                        <li>AI/ML models for behaviour tracking and predictive alerts.</li>
+                        <li>Blockchain-based ID generation and verification.</li>
+                        <li>Real-time dashboards for police/tourism departments.</li>
+                        <li>Optional IoT wearable integration for enhanced safety.</li>
+                        <li>Automated alert dispatch and evidence logging systems.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Registration Section -->
+        <div id="registration" class="section">
+            <h1 class="text-center mb-4">Tourist Registration</h1>
+            <div class="card">
+                <div class="card-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Full Name</label>
+                            <input type="text" class="form-control" id="name" placeholder="Enter your name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="kyc" class="form-label">Aadhaar/Passport Number</label>
+                            <input type="text" class="form-control" id="kyc" placeholder="Enter ID number">
+                        </div>
+                        <div class="mb-3">
+                            <label for="itinerary" class="form-label">Trip Itinerary</label>
+                            <textarea class="form-control" id="itinerary" rows="3" placeholder="Describe your travel plans"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="emergency" class="form-label">Emergency Contacts</label>
+                            <input type="text" class="form-control" id="emergency" placeholder="Enter contacts (comma-separated)">
+                        </div>
+                        <div class="mb-3">
+                            <label for="duration" class="form-label">Visit Duration</label>
+                            <input type="text" class="form-control" id="duration" placeholder="e.g., 2025-09-16 to 2025-09-30">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Register & Generate Digital ID</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tourist Portal Section (Simulated Dashboard) -->
+        <div id="tourist-portal" class="section">
+            <h1 class="text-center mb-4">Tourist Portal</h1>
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h3>Your Safety Score: 85/100</h3>
+                    <p>Based on your current location and travel patterns.</p>
+                </div>
+            </div>
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h3>Geo-Fencing Alerts</h3>
+                    <p>No active alerts. Stay safe!</p>
+                </div>
+            </div>
+            <div class="text-center mb-4">
+                <button class="panic-btn">Panic Button</button>
+                <p class="mt-2">Press in case of emergency to share location.</p>
+            </div>
+            <div class="map-placeholder">
+                <p>Live Location Map (Placeholder)</p>
+            </div>
+        </div>
+
+        <!-- Admin Portal Section (Simulated Dashboard) -->
+        <div id="admin-portal" class="section">
+            <h1 class="text-center mb-4">Admin Portal</h1>
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h3>Tourist Clusters & Heat Maps</h3>
+                    <div class="map-placeholder">
+                        <p>Real-time Heat Map (Placeholder)</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h3>Recent Alerts</h3>
+                    <ul class="list-group">
+                        <li class="list-group-item">Tourist ID: 12345 - Entered high-risk zone</li>
+                        <li class="list-group-item">Tourist ID: 67890 - Prolonged inactivity detected</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h3>Access Digital ID Records</h3>
+                    <input type="text" class="form-control mb-3" placeholder="Enter Tourist ID">
+                    <button class="btn btn-primary">View Records</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Bootstrap JS for functionality -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS for section switching with animations -->
+    <script>
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                section.classList.remove('active-section');
+            });
+            const targetSection = document.getElementById(sectionId);
+            targetSection.classList.add('active-section');
+            // Reset animation
+            targetSection.style.animation = 'none';
+            targetSection.offsetHeight; // Trigger reflow
+            targetSection.style.animation = 'fadeIn 0.8s ease-in-out';
+        }
+    </script>
+
+</body>
+</html>
